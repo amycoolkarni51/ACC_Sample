@@ -1,0 +1,201 @@
+<!--- frontend done by Narendra sir -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Frontend_Page</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <style media="screen">
+        .body{
+    background-color: rgb(15, 50, 50);
+    block-size: 100%;
+    width: 100%;
+  }
+  .navbar-section{
+   background: transparent;
+   color: rgb(252, 252, 252);
+   inset-block-start: fixed;
+  }
+
+  .navbar-section img{
+    margin-inline-end:5%;
+    width:20%;
+    height:20%;
+    border-radius:50%;
+  }
+  .h1-carousel{
+    color:rgb(158, 4, 4);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+  }
+  .paragraph-carousel{
+    color: rgb(9, 9, 9);
+    font-weight: 10%;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .button{
+    color: rgb(9, 9, 9);
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .carousel-item img{
+    height:550px;
+    width: 100%;
+    border-radius: 10%;
+  }
+  .carousel-inner{
+    padding: 20px;
+    margin: auto;
+  }
+
+      .img-sec{
+        width: 100%;
+        height: 160px;
+        border-radius: 10px;
+      }
+      .img-sec:hover{
+        transform: scale(1.3);
+        z-index: 2;
+      }
+      .nav{
+        width: 100%;
+        height: 50px;
+        background-color: white;
+        position: sticky;
+        top: 0;
+      }
+      nav ul{
+        display: flex;
+        margin-bottom:10px;
+        padding: 0;
+        float: right;
+      }
+    .discount-tag {
+      background-color: #f90707;
+      color: white;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      display: inline-block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      transform: rotate(-20deg);
+      font-size: 16px;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+      </style>
+</head>
+<body>
+
+   <div class="body">
+      <div class="container-field-navbar">
+         <div class="navbar-section">
+           <nav class="navbar sticky-top navbar-expand-lg navbar-light ">
+            <a href="course.html"><h5 class="text-white"><img src="https://media.licdn.com/dms/image/C560BAQETm0mhlZFeqQ/company-logo_200_200/0/1675503582524?e=2147483647&v=beta&t=FlvlvidSDyNqpgt-6Okq1I6wb1a-midaUKx3KJQgfJA"/>Our Courses </h5> </a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ml-auto">
+                 <li class="nav-item active">
+                   <a class="nav-link btn btn-outline-warning btn-sm mr-3 text-white" href="frontend.html">Frontend</a>
+                 </li>
+                 <li class="nav-item active">
+                   <a class="nav-link btn btn-outline-warning btn-sm mr-3 text-white" href="backend.html">Backend</a>
+                 </li>
+                 <li class="nav-item active">
+                   <a class="nav-link btn btn-outline-warning btn-sm mr-3 text-white" href="database.html">Database</a>
+                 </li>
+                 <li class="nav-item active">
+                   <a class="nav-link btn btn-outline-warning btn-sm text-white" href="marketing.html">Marketing</a>
+                 </li>
+               </ul>
+             </div>
+           </nav>
+         </div>
+
+       </div>
+      <div class="fe-section mt-5" id="fe-section">
+         <div class="container mt-2">
+           <h1 class="text-center font-weight-bold text-white mb-5">Frontend Technologies</h1>
+           <div class="row">
+             <div class="col-md-4">
+               <div class="card p-3 mb-3">
+                 <img src="https://static.javatpoint.com/terms/images/html-hypertext-markup-language1.png" class="img-sec img-thumbnail">
+                 <div class="card-body">
+                   Course description goes<a href="Html.html"> click here.</a>
+                   <a href="#" class="btn btn-primary" onclick="display('be-section')">Enroll Now</a>
+                   <span class="discount-tag">50% off!
+                 </div>
+               </div>
+             </div>
+             <div class="col-md-4">
+               <div class="card p-3 mb-3">
+                 <img src="https://miro.medium.com/v2/resize:fit:600/1*qG3OT-9cER8Nt-P7KR3YPw.jpeg" class="img-sec img-thumbnail">
+                 <div class="card-body">
+                   Course description goes<a href="css.html"> click here.</a>
+                   <a href="#" class="btn btn-primary">Enroll Now</a>
+                   <span class="discount-tag">50% off!
+                 </div>
+               </div>
+             </div>
+             <div class="col-md-4">
+               <div class="card p-3 mb-3">
+                 <img src="https://codeberryschool.com/blog/wp-content/uploads/2021/08/cover-1.png" class="img-sec img-thumbnail">
+                 <div class="card-body">
+                  Course description goes<a href="javascript.html"> click here.</a>
+                   <a href="#" class="btn btn-primary">Enroll Now</a>
+                   <span class="discount-tag">50% off!
+                 </div>
+               </div>
+               </div>
+               </div>
+               <div class="row">
+                 <div class="col-md-4">
+                   <div class="card p-3 mb-3">
+                   <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--eFpINR9o--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5c9mxgm5czaxntrvfgaq.png" class="img-sec img-thumbnail">
+                   <div class="card-body">
+                     Course description goes<a href="reactjs.html"> click here.</a>
+                     <a href="#" class="btn btn-primary">Enroll Now</a>
+                     <span class="discount-tag">50% off!
+                   </div>
+               </div>
+               </div>
+               <div class="col-md-4">
+                 <div class="card p-3 mb-3">
+                 <img src="https://nareshit.com/wp-content/uploads/2018/08/angular-JS-online-training-nareshit.jpg" class="img-sec img-thumbnail">
+                 <div class="card-body">
+                   Course description goes<a href="angularjs.html"> click here.</a>
+                   <a href="#" class="btn btn-primary">Enroll Now</a>
+                   <span class="discount-tag">50% off!
+                 </div>
+             </div>
+             </div>
+             <div class="col-md-4">
+               <div class="card p-3 mb-3">
+               <img src="https://d3s1xydsbc15sr.cloudfront.net/media/elearning/skill/jQuery.jpg" class="img-sec img-thumbnail">
+               <div class="card-body">
+                 Course description goes<a href="jquery.html"> click here.</a>
+                 <a href="#" class="btn btn-primary">Enroll Now</a>
+                 <span class="discount-tag">50% off!
+               </div>
+           </div>
+           </div>
+             </div>
+           </div>
+         </div>
+   </div>
+
+  </body>
+</body>
+</html>
