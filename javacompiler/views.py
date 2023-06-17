@@ -39,7 +39,7 @@ def editor(request):
                 output = result.stderr
             else:
                 # run the compiled script
-                result = subprocess.run(['java', '-cp', 'files', 'JavaProgram'], capture_output=True, text=True)
+                result = subprocess.run(['java', '-cp', 'files', 'JavaProgram'], capture_output=True, text=True, timeout=10)
 
                 # output is set to either stderr or stdout
                 if result.returncode == 1:
@@ -50,5 +50,7 @@ def editor(request):
         # in case any other exception occurs in the subprocess, client will be notified
         except subprocess.CalledProcessError as e:
             output = str(e)
+        except subprocess.TimeoutExpired as e:
+            output = 'TIME LIMIT EXCEEDED'
 
         return render(request, 'editor_java.html', { 'code': code_area_data, 'output': output })

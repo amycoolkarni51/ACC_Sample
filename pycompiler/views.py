@@ -24,7 +24,7 @@ def editor(request):
                 file.write(code_area_data)
             
             # run the js program
-            result = subprocess.run(['python3', 'files/py_code.py'], capture_output=True, text=True)
+            result = subprocess.run(['python3', 'files/py_code.py'], capture_output=True, text=True, timeout=10)
 
             # output is set to either stderr or stdout
             if result.returncode == 1:
@@ -35,5 +35,7 @@ def editor(request):
         # in case any other exception occurs in the subprocess, client will be notified
         except subprocess.CalledProcessError as e:
             output = str(e)
+        except subprocess.TimeoutExpired as e:
+            output = 'TIME LIMIT EXCEEDED'
 
         return render(request, 'editor_py.html', { 'code': code_area_data, 'output': output })

@@ -34,7 +34,7 @@ def editor(request):
             output_file_path = 'files/cpp_code'
 
             # output of the execution of the stored program
-            result = subprocess.run(['g++', input_file_path, '-o', output_file_path], capture_output=True, text=True)
+            result = subprocess.run(['g++', input_file_path, '-o', output_file_path], capture_output=True, text=True, timeout=10)
 
             # if there is compilation err:
             if result.returncode == 1:
@@ -52,5 +52,7 @@ def editor(request):
         # in case any other exception occurs in the subprocess, client will be notified
         except subprocess.CalledProcessError as e:
             output = str(e)
+        except subprocess.TimeoutExpired as e:
+            output = 'TIME LIMIT EXCEEDED'
 
         return render(request, 'editor.html', { 'code': code_area_data, 'output': output })
