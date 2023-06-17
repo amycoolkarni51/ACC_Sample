@@ -27,11 +27,11 @@ def editor(request):
 
         try:
             # the contents of the code area are written to a file on the server
-            with open('files/code.cpp', 'w') as file:
+            with open('files/cpp_code.cpp', 'w') as file:
                 file.write(code_area_data)
 
-            input_file_path = 'files/code.cpp'
-            output_file_path = 'files/code'
+            input_file_path = 'files/cpp_code.cpp'
+            output_file_path = 'files/cpp_code'
 
             # output of the execution of the stored program
             result = subprocess.run(['g++', input_file_path, '-o', output_file_path], capture_output=True, text=True)
@@ -41,7 +41,7 @@ def editor(request):
                 output = result.stderr
             else:
                 # run the compiled script
-                result = subprocess.run(['files/code'], capture_output=True, text=True)
+                result = subprocess.run(['files/cpp_code'], capture_output=True, text=True)
 
                 # output is set to either stderr or stdout
                 if result.returncode == 1:
