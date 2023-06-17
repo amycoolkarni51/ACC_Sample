@@ -5,8 +5,8 @@ import sys
 
 HELLO_WORLD = """
 public class JavaProgram {
-    // Write your code here
     public static void main(String[] args) {
+        // Write your code here
         System.out.println("Hello World!");
     }
 }
