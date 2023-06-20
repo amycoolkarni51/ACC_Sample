@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'cppcompiler',
     'javacompiler',
     'jscompiler',
+    'testing',
 ]
 
 MIDDLEWARE = [

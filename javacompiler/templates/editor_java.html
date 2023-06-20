@@ -22,12 +22,36 @@
 
 
   <title>Java Compiler</title>
+  <style>
+    .dropdown {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 50px;
+    }
+
+    .dropdown-options {
+      display: none;
+      position: absolute;
+      overflow: auto;
+    }
+
+    .dropdown:hover .dropdown-options {
+      display: block;
+    }
+  </style>
 </head>
 
 <body style="font-family:Verdana;"><br>
   <h1 style="text-align:center;">Java Compiler</h1><br>
 
   <form action="/javacompiler/editor/" method="post">
+    <div class="dropdown">
+      <button>Options</button>
+      <div class="dropdown-options">
+        <a href="/cppcompiler/editor/">CPP</a>
+        <a href="/jscompiler/editor/">JS</a>
+      </div>
+    </div>
     {% csrf_token %}
 
     <div class="form-group" style="margin-left:50px;margin-right:50px;">
