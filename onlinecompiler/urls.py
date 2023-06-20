@@ -21,6 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cppcompiler/', include('cppcompiler.urls')),
     path('javacompiler/', include('javacompiler.urls')),
-    path('jscompiler/', include('jscompiler.urls')),
-    path('pycompiler/', include('pycompiler.urls'))
+    path('jscompiler/', include('jscompiler.urls'))
 ]
