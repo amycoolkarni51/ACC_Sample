@@ -84,13 +84,13 @@
 
     const a = document.createElement('a')
     a.href = url
-    a.download = 'program.txt'
+    a.download = 'JavaProgram.java'
 
     // this element is NOT present on the DOM.
     // A click is simulated to go to the specified link
     a.click()
 
-    // removal of redundant parameters
+    // removal of redundant variables
     // BLOB SHOULD NOT BE REMOVED!
     window.URL.revokeObjectURL(url)
     a.remove()
