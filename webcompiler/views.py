@@ -2,9 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
+    # endpoint to send the user the page files
     return render(request, 'compiler/home.html')
 
 def preview(request):
+    # end point to process the code sent by the user
     if request.method == 'POST':
         html_code = request.POST.get('html_code', '')
         css_code = request.POST.get('css_code', '')

@@ -70,38 +70,66 @@
             return cookieValue;
         }
 
+        // following three functions go thru these steps:
+        // 1: a blob is created to store the code as files in the browser
+        // 2: a anchor tag is created, this tag won't be available on the DOM
+        //    the url to the blob is added to the href attr. and the download 
+        //    attr. describes the file name & extension 
+        // 3: a click is simulated on this anchor tag
+        // 4: the redundant variables are removed
         function downloadHTML() {
+            // 1
             const htmlCode = document.getElementById('html_code').value;
             const blob = new Blob([htmlCode], { type: 'text/html' });
             const url = window.URL.createObjectURL(blob);
+            
+            // 2
             const a = document.createElement('a');
             a.href = url;
             a.download = 'index.html';
+
+            // 3
             a.click();
+
+            // 4
             window.URL.revokeObjectURL(url);
             a.remove();
         }
 
         function downloadCSS() {
+            // 1
             const cssCode = document.getElementById('css_code').value;
             const blob = new Blob([cssCode], { type: 'text/css' });
             const url = window.URL.createObjectURL(blob);
+
+            // 2
             const a = document.createElement('a');
             a.href = url;
             a.download = 'styles.css';
+
+            // 3
             a.click();
+
+            // 4
             window.URL.revokeObjectURL(url);
             a.remove();
         }
 
         function downloadJS() {
+            // 1
             const jsCode = document.getElementById('js_code').value;
             const blob = new Blob([jsCode], { type: 'text/javascript' });
             const url = window.URL.createObjectURL(blob);
+
+            // 2
             const a = document.createElement('a');
             a.href = url;
             a.download = 'script.js';
+
+            // 3
             a.click();
+
+            // 4
             window.URL.revokeObjectURL(url);
             a.remove();
         }
