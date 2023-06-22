@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Online Editor</title>
     <style>
         #code-container {
             display: flex;
         }
+
         #code-input {
             flex: 1;
             padding-right: 20px;
         }
+
         #preview {
             flex: 1;
             padding-left: 20px;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            overflow: auto;
+        }
+
+        .dropdown:hover .dropdown-options {
+            display: block;
         }
     </style>
     <script>
@@ -88,8 +107,20 @@
         }
     </script>
 </head>
+
 <body>
     <h1>Online Editor</h1>
+    <div class="dropdown">
+        <button>Options</button>
+        <div class="dropdown-options">
+            <a href="/cppcompiler/editor/">CPP</a>
+            <a href="/javacompiler/editor/">JAVA</a>
+            <a href="/jscompiler/editor/">JS</a>
+            <a href="/phpcompiler/editor/">PHP</a>
+            <a href="/pycompiler/editor/">PY</a>
+            <a href="/webcompiler/editor/">WEB</a>
+        </div>
+    </div>
     <div id="code-container">
         <div id="code-input">
             <label for="html_code">HTML:</label><br>
@@ -102,7 +133,7 @@
             <textarea name="js_code" id="js_code" rows="10" cols="90"></textarea><br><br>
 
             {% csrf_token %}
-            <input type="button" value="Preview" onclick="updatePreview()"> 
+            <input type="button" value="Preview" onclick="updatePreview()">
             <button onclick="downloadHTML()">Download HTML</button>
             <button onclick="downloadCSS()">Download CSS</button>
             <button onclick="downloadJS()">Download JavaScript</button>
@@ -113,4 +144,5 @@
         </div>
     </div>
 </body>
+
 </html>
