@@ -1,0 +1,541 @@
+<!--Admin Dashboard Overview-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <!-- Icons Link-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!--Icon Link-->
+
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+  <title>Dashboard</title>
+
+</head>
+<style>
+  /*first navbar Acc course Admin modify*/
+  .navbar-brand {
+    font-family: 'Gill Sans';
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+
+  /*Dashboard Contant Modify*/
+  .nav-item {
+    position: relative;
+    top: 12px;
+    margin-left: -5px;
+    color: rgb(9, 233, 20);
+  }
+
+  /*Dashboard Icon Modificati*/
+  nav .fas {
+    position: relative;
+    width: 50px;
+    height: 40px;
+    top: 16px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(9, 233, 20);
+  }
+
+  /*nav slidebar all button hover*/
+  .nav-item:hover {
+    background: linear-gradient(to top left, #ffccff 0%, #d4d8d4 100%);
+    width:16%;
+  }
+
+  /*body color*/
+  body {
+    background: linear-gradient(to right, rgb(159, 163, 105), rgb(145, 77, 139));
+  }
+
+  /*overview box Modification*/
+  .overview-boxes .box {
+    display: flex;
+    background: rgb(13, 183, 196);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px lightblue;
+  }
+
+  .home-content .overview-boxes {
+    display: flex;
+  }
+
+  /*in overview arrow icon modify*/
+  .home-content .box .indicator i {
+    width: 20px;
+    background: #8FDACB;
+    border-radius: 50%;
+    color: #a00b0b;
+    font-size: 20px;
+    margin-right: 5px;
+  }
+
+  /*table heading*/
+  h2{border-bottom: 2px solid #1dc406;
+      font-weight: bold;
+      font-family: 'Times New Roman';}
+
+  /*table tag modify*/
+  table {
+    width: 100%;
+    height: 50%;
+  }
+
+</style>
+
+<body>
+  <!--NAVBAR-->
+  <nav class="navbar navbar-dark fixed-top p-0 shadow" style="background-color: rgb(138, 8, 8);">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">ACC COURSES ADMIN</a>
+  </nav>
+
+
+  <!--Slidebar-->
+
+  <!--Taken Div in div i divided two part-->
+
+  <div class="container-fluid" style="margin-top: 20px;">
+    <div class="row">
+      <div class="col-md-2 bg-dark">
+        <nav class="slidebar py-5 d-print-none fixed-top p-2">
+
+          <ul class="nav flex-column">
+            <!--in Slidebar Button-->
+
+            <!--Dashboard btn-->
+            <li class="nav-item">
+              <a href="das.html"><i class="fas fa-tachometer"></i><span class="nav-item"><b>Dasshboard</b></span></a>
+            </li>
+
+            <!--My Profile-->
+            <li class="nav-item">
+              <a href="#"><i class="fas fa-user"></i><span class="nav-item"><b>My Profile</b></span></a>
+            </li>
+
+            <!--Course Btn-->
+            <li class="nav-item">
+              <a href="course (1).html"><i class="fas fa-accessible-icon"></i><span
+                  class="nav-item"><b>Courses</b></span></a>
+            </li>
+
+            <!--Students Btn-->
+            <li class="nav-item">
+              <a href="#"><i class="fas fa-users"></i><span class="nav-item"><b>Students</b></span></a>
+            </li>
+
+            <!--Settings Btn-->
+            <li class="nav-item">
+              <a href="#"><i class='fas fa-book'></i><span class="nav-item"><b>Settings</b></span></a>
+
+              <!--Feedback Btn-->
+            <li class="nav-item">
+              <a href="#"><i class='fas fa-accessible-icon'></i><span class="nav-item"><b>Feedback</b></span></a>
+            </li>
+
+            <!--Change password-->
+            <li class="nav-item">
+              <a href="#"><i class='fas fa-key'></i><span class="nav-item"><b>Change Password</b></span></a>
+            </li>
+
+            <!--Logout Btn-->
+            <li class="nav-item">
+              <a href="#"><i class='fas fa-sign-out'></i><span class="nav-item"><b>Log out</b></span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!--Slidebar End-->
+
+
+      <!--Taken Div this div total col-md-10 parts all home content overview-->
+      <div class="col-md-10" style="margin-top: 50px;">
+        <div class="home-content">
+          <div class="overview-boxes">
+
+            <!--Here First Box modify-->
+            <div class="box">
+              <div class="right-side">
+
+                <!--First Box Registration Topic-->
+                <div class="box-topic"><b>Registrations</b></div>
+
+                <!--Total Registration Students-->
+                <div class="number">40,876</div>
+                <div class="indicator">
+
+                  <!--Here arrow icon code-->
+                 <p><i class='bx bx-up-arrow-alt'></i>Up from yesterday</p>
+                 
+                </div>
+              </div>
+
+              <!--Registration logo-->
+              <i><img
+                  src="https://cdn2.iconfinder.com/data/icons/leto-most-searched-mix-4/64/__profile_account_registration-512.png"
+                  width="60" alt=""></i>
+            </div>
+
+            <!--Here Second Box modify-->
+            <div class="box" style="margin-left: 20px;">
+              <div class="right-side">
+
+                <!--Second Box Course Topic-->
+                <div class="box-topic"><b>Courses</b></div>
+
+                <!--Total Course-->
+                <div class="number">25</div>
+                <div class="indicator">
+
+                  <!--Here arrow icon code-->
+                  <i class='bx bx-up-arrow-alt'></i>
+                  <span class="text">Up from yesterday</span>
+                </div>
+              </div>
+              <!--Course logo-->
+              <i> <img src="https://www.pngarts.com/files/7/Training-Free-PNG-Image.png" width="60" alt=""></i>
+            </div>
+
+            <!--Here Third Box modify-->
+            <div class="box" style="margin-left: 20px;">
+              <div class="right-side">
+
+
+                <!--Third Box User Topic-->
+                <div class="box-topic"><b>Users</b></div>
+
+                <!--Total User-->
+                <div class="number">12,876</div>
+                <div class="indicator">
+
+                  <!--Here arrow icon code-->
+                  <i class='bx bx-up-arrow-alt'></i>
+                  <span class="text">Up from yesterday</span>
+                </div>
+              </div>
+              <!--User logo-->
+              <i><img
+                  src="https://cdn0.iconfinder.com/data/icons/education-line-circle-1/614/243_-_Male_Student-512.png"
+                  width="60" alt=""></i>
+            </div>
+
+
+            <!--Here Fourth Box modify-->
+            <div class="box" style="margin-left: 20px;">
+              <div class="right-side">
+
+                <!--Fourth Box User Topic-->
+                <div class="box-topic"><b>Signups</b></div>
+
+                <!--Total Signups-->
+                <div class="number">11,086</div>
+                <div class="indicator">
+
+                  <!--Here arrow icon code-->
+                  <i class='bx bx-down-arrow-alt down'></i>
+                  <span class="text">Down From Today</span>
+                </div>
+              </div>
+              <!--Signup logo-->
+              <i><img src="https://www.english-grammar-revolution.com/images/sign_up_circle_icon_blue.png" width="60"
+                  alt=""></i>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!--Taken Row for All Registered Students purpose-->
+        <div class="row mt-3">
+          <div class="col-md-12 mt-3 ">
+            <div class="card-body bg-light" style="border-radius: 12px;">
+              <!--hEADING-(All Registered Student)-->
+              <h2 class=" text-warning text-center">ALL REGISTERED STUDENT
+              </h2>
+
+              <!--Open Table-->
+              <table>
+                <!--All Heading part of table-->
+                <thead class="text-danger">
+                  <tr>
+                    <th>Name</th>
+                    <th>Email Id</th>
+                    <th>Mobile</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th>Qualification</th>
+                    <th>Profession</th>
+                    <th>Course</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <!--In Table Body Part-->
+                <tbody>
+
+                  <!--First Row of Data-->
+                  <tr>
+                    <td>Satish Kumar</td>
+                    <td>satishabcd07@gmail.com</td>
+                    <td>8271744121</td>
+                    <td>Male</td>
+                    <td>Bihar</td>
+                    <td>BCA</td>
+                    <td>Student</td>
+                    <td>Python</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Second Row of Data-->
+                  <tr>
+                    <td>Radha Rani</td>
+                    <td>radha07@gmail.com</td>
+                    <td>8000000000</td>
+                    <td>Female</td>
+                    <td>Hyderabad</td>
+                    <td>MCA</td>
+                    <td>Student</td>
+                    <td>Python</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Third Row of Data-->
+                  <tr>
+                    <td>Sital Verma</td>
+                    <td>sital07@gmail.com</td>
+                    <td>8271744121</td>
+                    <td>Female</td>
+                    <td>Jharkhand</td>
+                    <td>B.sc IT</td>
+                    <td>Student</td>
+                    <td>Java</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Fourth Row of Data-->
+                  <tr>
+                    <td>Himanshu Kumar </td>
+                    <td>himanshukr07@gmail.com</td>
+                    <td>9798237504</td>
+                    <td>Male</td>
+                    <td>Maharashtra</td>
+                    <td>B.Tech</td>
+                    <td>Student</td>
+                    <td>Backend</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Fifth Row of Data-->
+                  <tr>
+                    <td>Sudhanshu Ranjan </td>
+                    <td>sudhanshu07@gmail.com</td>
+                    <td>8271744121</td>
+                    <td>Male</td>
+                    <td>Odisha</td>
+                    <td>B.sc</td>
+                    <td>Student</td>
+                    <td>Backend</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Sixth Row of Data-->
+                  <tr>
+                    <td>Suruchi Rajkanya</td>
+                    <td>ruchi07@gmail.com</td>
+                    <td>8271744121</td>
+                    <td>Female</td>
+                    <td>Bihar</td>
+                    <td>BCA</td>
+                    <td>Student</td>
+                    <td>Backend</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <!--Taken Row for All Signup Students purpose-->
+        <div class="row mt-3">
+          <div class="col-md-12 mt-3">
+            <div class="card bg-light" style="border-radius: 12px;">
+              <!--hEADING-(All Registered Student)-->
+              <h2 class=" text-warning text-center">ALL SIGNUP STUDENTS</h2>
+
+              <!--Open Table-->
+              <table class="ml-4">
+                <!--All Heading part of table-->
+                <thead class="text-danger">
+                  <tr>
+                    <th>Name</th>
+                    <th>Email Id</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <!--In Table Body Part-->
+                <tbody>
+
+                  <!--First Row of Data-->
+                  <tr>
+                    <td>Satish Kumar</td>
+                    <td>satishabcd07@gmail.com</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Second Row of Data-->
+                  <tr>
+                    <td>Radha Rani</td>
+                    <td>radha07@gmail.com</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Third Row of Data-->
+                  <tr>
+                    <td>Sital Verma</td>
+                    <td>sital07@gmail.com</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Fourth Row of Data-->
+                  <tr>
+                    <td>Himanshu Kumar</td>
+                    <td>himanshukr07@gmail.com</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Fifth Row of Data-->
+                  <tr>
+                    <td>Sudhanshu Ranjan</td>
+                    <td>sudhanshu07@gmail.com</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Sixth Row of Data-->
+                  <tr>
+                    <td>Suruchi Rajkanya</td>
+                    <td>ruchi07@gmail.com</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+                </tbody>
+              </table><br>
+            </div>
+          </div>
+        </div>
+
+
+        <!--Taken Row for contact us purpose-->
+        <div class="row mt-3">
+          <div class="col-md-12 mt-3 ">
+            <div class="card bg-light" style="border-radius: 12px;">
+              <!--hEADING-(All Registered Student)-->
+              <h2 class=" text-warning text-center" >CONTACT US</h2>
+
+              <!--Open Table-->
+              <table class="ml-4">
+                <!--All Heading part of table-->
+                <thead class="text-danger">
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Id</th>
+                    <th>Message</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+
+                <!--In Table Body Part-->
+                <tbody>
+
+                  <!--First Row of Data-->
+                  <tr>
+                    <td>Satish</td>
+                    <td>Kumar</td>
+                    <td>satishabcd07@gmail.com</td>
+                    <td>Its Good Video</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Second Row of Data-->
+                  <tr>
+                    <td>Radha</td>
+                    <td>Rani</td>
+                    <td>radha07@gmail.com</td>
+                    <td>hi my name is radha rani</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Third Row of Data-->
+                  <tr>
+                    <td>Sital</td>
+                    <td>Rani</td>
+                    <td>sital07@gmail.com</td>
+                    <td>This is my first training class </td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+
+                  <!--Fourth Row of Data-->
+                  <tr>
+                    <td>Himanshu</td>
+                    <td>Kumar</td>
+                    <td>himanshukr07@gmail.com</td>
+                    <td>An extremely and helpful course</td>
+                    <td><a href="#"><img
+                          src="https://static.vecteezy.com/system/resources/previews/000/378/230/original/delete-vector-icon.jpg"
+                          width="20" alt=""></a></td>
+                  </tr>
+                </tbody>
+              </table><br>
+            </div>
+          </div>
+        </div><br>
+
+      </div>
+    </div> <!--Main Row Close-->
+  </div> <!--Main Div Close Slidebar nav-->
+</body>
+
+</html>
