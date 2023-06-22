@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'javacompiler',
     'jscompiler',
     'testing',
+    'webcompiler'
 ]
 
 MIDDLEWARE = [

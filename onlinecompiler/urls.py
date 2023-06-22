@@ -22,5 +22,5 @@ urlpatterns = [
     path('cppcompiler/', include('cppcompiler.urls')),
     path('javacompiler/', include('javacompiler.urls')),
     path('jscompiler/', include('jscompiler.urls')),
-    path('testing/', include('testing.urls')),
+    path('webcompiler/', include('webcompiler.urls'))
 ]

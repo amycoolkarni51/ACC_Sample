@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Editor</title>
+    <style>
+        #code-container {
+            display: flex;
+        }
+        #code-input {
+            flex: 1;
+            padding-right: 20px;
+        }
+        #preview {
+            flex: 1;
+            padding-left: 20px;
+        }
+    </style>
+    <script>
+        function updatePreview() {
+            var htmlCode = document.getElementById('html_code').value;
+            var cssCode = document.getElementById('css_code').value;
+            var jsCode = document.getElementById('js_code').value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/webcompiler/preview/');
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    document.getElementById('preview-frame').srcdoc = xhr.responseText;
+                }
+            };
+            xhr.send('html_code=' + encodeURIComponent(htmlCode) +
+                '&css_code=' + encodeURIComponent(cssCode) +
+                '&js_code=' + encodeURIComponent(jsCode));
+        }
+
+        // Function to get the CSRF token cookie value
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        function downloadHTML() {
+            const htmlCode = document.getElementById('html_code').value;
+            const blob = new Blob([htmlCode], { type: 'text/html' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'index.html';
+            a.click();
+            window.URL.revokeObjectURL(url);
+            a.remove();
+        }
+
+        function downloadCSS() {
+            const cssCode = document.getElementById('css_code').value;
+            const blob = new Blob([cssCode], { type: 'text/css' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'styles.css';
+            a.click();
+            window.URL.revokeObjectURL(url);
+            a.remove();
+        }
+
+        function downloadJS() {
+            const jsCode = document.getElementById('js_code').value;
+            const blob = new Blob([jsCode], { type: 'text/javascript' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'script.js';
+            a.click();
+            window.URL.revokeObjectURL(url);
+            a.remove();
+        }
+    </script>
+</head>
+<body>
+    <h1>Online Editor</h1>
+    <div id="code-container">
+        <div id="code-input">
+            <label for="html_code">HTML:</label><br>
+            <textarea name="html_code" id="html_code" rows="10" cols="90"></textarea><br><br>
+
+            <label for="css_code">CSS:</label><br>
+            <textarea name="css_code" id="css_code" rows="10" cols="90"></textarea><br><br>
+
+            <label for="js_code">JavaScript:</label><br>
+            <textarea name="js_code" id="js_code" rows="10" cols="90"></textarea><br><br>
+
+            {% csrf_token %}
+            <input type="button" value="Preview" onclick="updatePreview()"> 
+            <button onclick="downloadHTML()">Download HTML</button>
+            <button onclick="downloadCSS()">Download CSS</button>
+            <button onclick="downloadJS()">Download JavaScript</button>
+        </div>
+        <div id="preview">
+            <h1>Preview:</h1>
+            <iframe id="preview-frame" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+</body>
+</html>
