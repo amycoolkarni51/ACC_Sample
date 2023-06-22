@@ -1,40 +1,43 @@
+import sys
+
 from django.shortcuts import render
 from django.http import HttpResponse
-import subprocess
 
-HELLO_WORLD = """
-print('Hello World!')
-"""
 
 # Create your views here.
+
+def index(request):
+    return render(request,'index.html')
+
 def editor(request):
-    # Endpoint for client's visit
-    if request.method == 'GET':
-        return render(request, 'editor_py.html', { 'code': HELLO_WORLD, 'output': '' })
-    
-    # Endpoint to execute the program sent thru POST
-    elif request.method == 'POST':
-        code_area_data = request.POST['codearea']
-        output = ""
+    codeareadata = "print('Hello World!')"
+    output = ""
+
+    if request.method == 'POST':
+
+        codeareadata = request.POST['codearea']
 
         try:
-            # the contents of the code area are written to a file on the server
-            with open('files/py_code.py', 'w') as file:
-                file.write(code_area_data)
-            
-            # run the python program
-            result = subprocess.run(['python3', 'files/py_code.py'], capture_output=True, text=True, timeout=10)
+            #save original standard output refernce
+            original_stdout = sys.stdout
+            sys.stdout = open('file.txt','w')  # change the standard output to the file we created
 
-            # output is set to either stderr or stdout
-            if result.returncode == 1:
-                output = result.stderr
-            elif result.returncode == 0:
-                output = result.stdout
+            #execute code
+            exec(codeareadata)  # similar to print(codedata)
 
-        # in case any other exception occurs in the subprocess, client will be notified
-        except subprocess.CalledProcessError as e:
-            output = str(e)
-        except subprocess.TimeoutExpired as e:
-            output = 'TIME LIMIT EXCEEDED'
+            sys.stdout.close()
 
-        return render(request, 'editor_py.html', { 'code': code_area_data, 'output': output })
+            sys.stdout = original_stdout  #reset the original data into standard value
+
+
+            #finally read output from file and save its output
+
+            output = open('file.txt','r').read()
+
+        except Exception as e:
+            # to return error in code
+            sys.stdout = original_stdout
+            output = e
+
+    #finally return and render page and send the codedata on index page
+    return render(request,"editor_py.html", {"code": codeareadata , "output": output })
