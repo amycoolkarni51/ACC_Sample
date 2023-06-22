@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'cppcompiler',
     'javacompiler',
     'jscompiler',
+    'pycompiler',
+    'webcompiler',
     'testing',
-    'webcompiler'
 ]
 
 MIDDLEWARE = [
