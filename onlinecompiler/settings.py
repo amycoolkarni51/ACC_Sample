@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'javacompiler',
     'jscompiler',
     'pycompiler',
+    'phpcompiler',
     'webcompiler',
     'testing',
 ]

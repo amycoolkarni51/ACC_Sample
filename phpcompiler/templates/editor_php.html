@@ -21,7 +21,7 @@
     crossorigin="anonymous"></script>
 
 
-  <title>PyCompiler</title>
+  <title>PHP Runner</title>
   <style>
     .dropdown {
       display: inline-block;
@@ -42,9 +42,9 @@
 </head>
 
 <body style="font-family:Verdana;"><br>
-  <h1 style="text-align:center;">PyCompiler</h1><br>
+  <h1 style="text-align:center;">PHP Compiler</h1><br>
 
-  <form action="/pycompiler/editor/" method="post">
+  <form action="/phpcompiler/editor/" method="post">
     <div class="dropdown">
       <button>Options</button>
       <div class="dropdown-options">
@@ -84,7 +84,7 @@
 
     const a = document.createElement('a')
     a.href = url
-    a.download = 'program.py'
+    a.download = 'program.php'
 
     // this element is NOT present on the DOM.
     // A click is simulated to go to the specified link

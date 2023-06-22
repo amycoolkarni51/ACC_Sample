@@ -23,5 +23,6 @@ urlpatterns = [
     path('javacompiler/', include('javacompiler.urls')),
     path('jscompiler/', include('jscompiler.urls')),
     path('pycompiler/', include('pycompiler.urls')),
+    path('phpcompiler/', include('phpcompiler.urls')),
     path('webcompiler/', include('webcompiler.urls')),
 ]

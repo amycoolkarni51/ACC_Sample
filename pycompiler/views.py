@@ -20,7 +20,7 @@ def editor(request):
         try:
             #save original standard output refernce
             original_stdout = sys.stdout
-            sys.stdout = open('file.txt','w')  # change the standard output to the file we created
+            sys.stdout = open('files/file.txt','w')  # change the standard output to the file we created
 
             #execute code
             exec(codeareadata)  # similar to print(codedata)
@@ -32,7 +32,7 @@ def editor(request):
 
             #finally read output from file and save its output
 
-            output = open('file.txt','r').read()
+            output = open('files/file.txt','r').read()
 
         except Exception as e:
             # to return error in code
