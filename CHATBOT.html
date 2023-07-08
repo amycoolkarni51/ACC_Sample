@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <title>Chat</title>
+</head>
+
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /*Body modify*/
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        justify-content: center;
+        overflow: hidden;
+        background-color: lightblue;
+    }
+
+    /*box modify*/
+    #main {
+        width: 420px;
+        height: 100vh;
+        box-shadow: inset 0 0 10px 4px red;
+        border-radius: 15px;
+        background-color: white;
+    }
+
+    /*in box header chatbox */
+    h2 {
+        text-align: center;
+        font-family: 'Times New Roman';
+        background-color: #400eb4;
+        color: rgb(226, 226, 235);
+        padding: 10px;
+        border-radius: 15px 15px 0px 0px;
+        text-shadow: 1px 1px 4px #111;
+    }
+
+    /*in box chatbox*/
+    #chatbox {
+        height: 82%;
+        padding: 0 8PX;
+    }
+
+    /*in box default msg */
+    h3 {
+        margin-left: 10px;
+        font-family: 'Gill Sans';
+        font-size: 20px;
+    }
+
+    /*input box modify*/
+    #input {
+        height: 7%;
+        min-height: 42px;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        margin: 8px 16px;
+    }
+
+    /*in input msg & box modify*/
+    #userInput {
+        outline: none;
+        font-size: 20px;
+        background: rgb(2, 13, 15);
+        color: rgb(250, 248, 248);
+        border-radius: 32px 0px 32px 0px;
+        padding: 0 16px;
+        border: solid 1px rgb(12, 190, 56);
+        border-right: none;
+    }
+
+
+    /*Send Button Modify*/
+    #send {
+        outline: none;
+        font-size: 20px;
+        color: bisque;
+        background: red;
+        border: none;
+        border-radius: 0px 32px 0px 32px;
+    }
+
+    /*Send botton Active*/
+    #send:active {
+        font-size: 16px;
+    }
+
+</style>
+
+<!--Body Start-->
+
+<body>
+
+    <!--In Body One div For Chat Purpose-->
+    <div id="main">
+
+        <!--in box/div given header-->
+        <h2>ChatBot</h2>
+
+        <!--In Box/div msg_Aren default msg-->
+        <div id="chatbox">
+            <h3>Hi i am MHTECHIN Assistant</h3>
+        </div>
+
+        <!--Input box here-->
+        <div id="input">
+            <input type="text" id="userInput" placeholder="Type your message here...">
+
+            <!--Send Button-->
+            <button id="send">Send <i class="fa fa-paper-plane"> </i></button>
+        </div>
+    </div>
+
+
+    <!---Javascript Start-->
+    <script type="text/javascript">
+        const chatbox = document.getElementById("chatbox");
+        const userInput = document.getElementById("userInput");
+        const sendButton = document.getElementById("send");
+
+
+
+        // Helper function to add a message to the chatbox
+        function addMessageToChatbox(message, sender) {
+            const messageElement = document.createElement("div");
+            messageElement.innerText = `${sender}: ${message}`;
+            chatbox.appendChild(messageElement);
+        }
+        
+
+        // Bot's responses based on user input
+        function getBotResponse(userInput) {
+            // Replace this logic with your custom chatbot responses
+            const responses = {
+                "hello": "Thank You For connect MHTECHIN Assistant, How can i help you",
+                "how are you?": "I'm just a MHTECHIN Assistant, but thanks for asking!",
+                "what is your name?": "I'm MHTECHIN Assistant.",
+                "default": "I'm sorry, but I don't understand. Can you rephrase that?",
+            };
+
+            const input = userInput.toLowerCase();
+            return responses[input] || responses["default"];
+        }
+
+
+
+        // Function to handle user input and get the bot's response
+        function handleUserInput() {
+            const userMessage = userInput.value.trim();
+            if (userMessage !== "") {
+                addMessageToChatbox(userMessage, "You");
+                userInput.value = "";
+
+                const botResponse = getBotResponse(userMessage);
+                addMessageToChatbox(botResponse, "ChatBot");
+            }
+        }
+
+        // To handle user input when Send button is clicked
+        send.addEventListener("click", () => {
+            handleUserInput();
+        });
+
+
+        // To handle user input when Enter key is pressed
+        userInput.addEventListener("keyup", (event) => {
+            if (event.key === "Enter") {
+                handleUserInput();
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
